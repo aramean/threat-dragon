@@ -20,11 +20,11 @@
           {
             "position": {
               "x": 289.9999999999999,
-              "y": 90.00000000000011
+              "y": 140.0000000000001
             },
             "size": {
               "width": 330,
-              "height": 330
+              "height": 280
             },
             "visible": true,
             "shape": "trust-boundary-box",
@@ -41,8 +41,7 @@
               ],
               "containedElements": [
                 "78bdfa01-3517-4bd6-afe7-62447f24d053",
-                "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
-                "d4bea1e4-5db4-421f-b721-78fb0c0cf6a1"
+                "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d"
               ]
             }
           },
@@ -166,11 +165,11 @@
           {
             "position": {
               "x": 475,
-              "y": 165
+              "y": 180
             },
             "size": {
               "width": 80,
-              "height": 90
+              "height": 60
             },
             "attrs": {
               "text": {
@@ -505,8 +504,8 @@
           },
           {
             "position": {
-              "x": 300,
-              "y": 100
+              "x": 345,
+              "y": 100.00000000000011
             },
             "size": {
               "width": 210,

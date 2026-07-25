@@ -18,6 +18,34 @@
         "version": "2.6.2",
         "cells": [
           {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": -1,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            },
+            "labels": [
+              "Trust Boundary"
+            ],
+            "id": "e1eb0bc9-b886-4429-966b-ca4e289fd584",
+            "source": {
+              "x": 205,
+              "y": 40
+            },
+            "target": {
+              "x": 305,
+              "y": 140
+            }
+          },
+          {
             "position": {
               "x": 70,
               "y": 120
@@ -38,6 +66,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +150,6 @@
               ]
             },
             "id": "e739b683-4e69-4de0-986f-2223e41a0976",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "User",
@@ -155,6 +183,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -238,7 +267,6 @@
               ]
             },
             "id": "78bdfa01-3517-4bd6-afe7-62447f24d053",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "SSH\nServer",
@@ -278,6 +306,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -361,7 +390,6 @@
               ]
             },
             "id": "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
-            "zIndex": 4,
             "data": {
               "type": "tm.Store",
               "name": "PostgreSQL\nDatabase",
@@ -427,40 +455,6 @@
               {
                 "x": 330,
                 "y": 155
-              }
-            ]
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 11,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Trust Boundary",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false,
-              "crossingFlows": [],
-              "containedElements": []
-            },
-            "labels": [
-              "Trust Boundary"
-            ],
-            "id": "a1f509cd-d506-4b7d-baeb-7ef717e42c93",
-            "source": {
-              "x": 210,
-              "y": 35
-            },
-            "target": {
-              "x": 310,
-              "y": 135
-            },
-            "vertices": [
-              {
-                "x": 290,
-                "y": 90
               }
             ]
           }

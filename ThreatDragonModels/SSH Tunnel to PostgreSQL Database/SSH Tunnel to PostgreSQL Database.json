@@ -158,7 +158,7 @@
             "data": {
               "type": "tm.Actor",
               "name": "Användare",
-              "description": "",
+              "description": "Användare eller Angripare",
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -286,39 +286,39 @@
               "privilegeLevel": "",
               "threats": [
                 {
-                  "id": "cd5d9752-b595-4f03-b7f4-5c8d44b8c970",
-                  "title": "Password Brute-Force",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Spoofing",
-                  "description": "An attacker guesses the SSH password to log in as a legitimate user.",
-                  "mitigation": "Fail2ban blocks failed attempts, and a strong password limits guessing.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 1,
-                  "score": ""
-                },
-                {
                   "id": "994d2610-3ae8-4a4b-b285-9f04c7ccc0f3",
-                  "title": "New STRIDE threat",
+                  "title": "Root tillgång",
                   "status": "Open",
-                  "severity": "TBD",
-                  "type": "Tampering",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "severity": "Low",
+                  "type": "Elevation of privilege",
+                  "description": "Angripare försöker eskalera till root via sudo.",
+                  "mitigation": "SSH-användaren har inga sudo-rättigheter.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 3,
                   "score": ""
+                },
+                {
+                  "id": "fd9f20de-14d2-4e91-ba40-d84dfc924c5f",
+                  "title": "Loggning",
+                  "status": "Mitigated",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Angripare utför handlingar via SSH utan att kunna spåras.",
+                  "mitigation": "SSH-autentisering och sessionsloggning är aktiverat i /var/log/auth.log",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "spoofing": 4,
+                "spoofing": 3,
                 "tampering": 1,
-                "repudiation": 0,
+                "repudiation": 1,
                 "informationDisclosure": 0,
                 "denialOfService": 3,
-                "elevationOfPrivilege": 7
+                "elevationOfPrivilege": 8
               }
             }
           },
@@ -446,7 +446,7 @@
               "threats": [
                 {
                   "id": "49aa5f10-bb3d-45b3-94ca-46e185a18248",
-                  "title": "Direct Port Exposure",
+                  "title": "Extern port",
                   "status": "Mitigated",
                   "severity": "High",
                   "type": "Information disclosure",
@@ -461,7 +461,7 @@
               "threatFrequency": {
                 "tampering": 1,
                 "repudiation": 0,
-                "informationDisclosure": 4,
+                "informationDisclosure": 5,
                 "denialOfService": 0
               }
             }
@@ -564,7 +564,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "Angripare skickar en ström av falska inloggningsförsök i flödet för att knäcka lösenordet.",
+                  "description": "Angripare skickar en ström av falska inloggningsförsök via port 22 för att knäcka lösenordet.",
                   "mitigation": "Fail2ban blockerar misslyckade försök temporärt.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -576,9 +576,9 @@
                 "17056723-829c-4ff8-9dd6-96d4f39d263a"
               ],
               "threatFrequency": {
-                "tampering": 2,
+                "tampering": 3,
                 "informationDisclosure": 0,
-                "denialOfService": 2
+                "denialOfService": 3
               }
             },
             "labels": [
@@ -601,6 +601,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Teacher",
-    "threatTop": 6
+    "threatTop": 7
   }
 }

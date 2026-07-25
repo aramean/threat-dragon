@@ -26,13 +26,18 @@
               "width": 580,
               "height": 200
             },
+            "attrs": {
+              "label": {
+                "text": "Förtroendegräns"
+              }
+            },
             "visible": true,
             "shape": "trust-boundary-box",
             "zIndex": -1,
             "id": "17056723-829c-4ff8-9dd6-96d4f39d263a",
             "data": {
               "type": "tm.BoundaryBox",
-              "name": "Trust Boundary",
+              "name": "Förtroendegräns",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
@@ -41,8 +46,7 @@
               ],
               "containedElements": [
                 "78bdfa01-3517-4bd6-afe7-62447f24d053",
-                "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
-                "d4bea1e4-5db4-421f-b721-78fb0c0cf6a1"
+                "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d"
               ]
             }
           },
@@ -295,19 +299,6 @@
                   "score": ""
                 },
                 {
-                  "id": "cb67befa-d077-455a-ba18-a7df13a7ef5b",
-                  "title": "Flooding",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Denial of service",
-                  "description": "An attacker floods port 22 with traffic to prevent user logins",
-                  "mitigation": "Firewall rate limits restrict incoming connection attempts",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 2,
-                  "score": ""
-                },
-                {
                   "id": "994d2610-3ae8-4a4b-b285-9f04c7ccc0f3",
                   "title": "New STRIDE threat",
                   "status": "Open",
@@ -326,7 +317,7 @@
                 "tampering": 1,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 4,
+                "denialOfService": 3,
                 "elevationOfPrivilege": 7
               }
             }
@@ -459,8 +450,8 @@
                   "status": "Mitigated",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "An external attacker views data directly through port 5432",
-                  "mitigation": "PostgreSQL listens on localhost, completely blocking external connections and forcing all access through the encrypted SSH tunnel",
+                  "description": "Angripare får direkt åtkomst till data via port 5432",
+                  "mitigation": "PostgreSQL är endast tillgänglig via localhost och SSH-tunnel.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 4,
@@ -470,59 +461,10 @@
               "threatFrequency": {
                 "tampering": 1,
                 "repudiation": 0,
-                "informationDisclosure": 3,
+                "informationDisclosure": 4,
                 "denialOfService": 0
               }
             }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "SSH login (lösenord)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "17056723-829c-4ff8-9dd6-96d4f39d263a"
-              ]
-            },
-            "labels": [
-              "SSH login (lösenord)"
-            ],
-            "id": "0df17f00-76fa-4b5c-96df-a70a5ec13f9b",
-            "source": {
-              "cell": "e739b683-4e69-4de0-986f-2223e41a0976",
-              "port": "be48a8d3-6327-4231-9895-7bf36c8947a6"
-            },
-            "target": {
-              "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
-              "port": "c76aee75-b927-4326-8205-75b9c2213101"
-            },
-            "vertices": []
           },
           {
             "shape": "flow",
@@ -572,28 +514,86 @@
             "vertices": []
           },
           {
-            "position": {
-              "x": 319.9999999999998,
-              "y": 139.99999999999966
-            },
-            "size": {
-              "width": 110,
-              "height": 50
-            },
+            "shape": "flow",
             "attrs": {
-              "text": {
-                "text": "Förtroendegräns"
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
               }
             },
-            "visible": true,
-            "shape": "td-text-block",
-            "zIndex": 11,
-            "id": "d4bea1e4-5db4-421f-b721-78fb0c0cf6a1",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
             "data": {
-              "type": "tm.Text",
-              "name": "Förtroendegräns",
-              "hasOpenThreats": false
-            }
+              "type": "tm.Flow",
+              "name": "SSH login (lösenord)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "bec310ee-3996-45ef-8be1-15344cfd84f2",
+                  "title": "Flooding",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Angripare överbelastar port 22 för att blockera SSH-inloggningar.",
+                  "mitigation": "Brandväggen begränsar inkommande anslutningsförsök.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                },
+                {
+                  "id": "9fc25b89-0639-45a5-ab65-85a2acf1a62d",
+                  "title": "Brute-Force",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Angripare skickar en ström av falska inloggningsförsök i flödet för att knäcka lösenordet.",
+                  "mitigation": "Fail2ban blockerar misslyckade försök temporärt.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "17056723-829c-4ff8-9dd6-96d4f39d263a"
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "informationDisclosure": 0,
+                "denialOfService": 2
+              }
+            },
+            "labels": [
+              "SSH login (lösenord)"
+            ],
+            "id": "0df17f00-76fa-4b5c-96df-a70a5ec13f9b",
+            "source": {
+              "cell": "e739b683-4e69-4de0-986f-2223e41a0976",
+              "port": "be48a8d3-6327-4231-9895-7bf36c8947a6"
+            },
+            "target": {
+              "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
+              "port": "c76aee75-b927-4326-8205-75b9c2213101"
+            },
+            "vertices": []
           }
         ],
         "description": "Threat model of a home server running a PostgreSQL database accessible only through an SSH tunnel."
@@ -601,6 +601,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Teacher",
-    "threatTop": 4
+    "threatTop": 6
   }
 }

@@ -1,9 +1,9 @@
 {
   "version": "2.6.2",
   "summary": {
-    "title": "SSH Tunnel to PostgreSQL Database",
+    "title": "SSH Tunnel till PostgreSQL Database",
     "owner": "Josef Gabrielsson",
-    "description": "This system is a home server with a PostgreSQL database. The database is not open to the internet. It can only be accessed through an SSH tunnel.",
+    "description": "Detta system består av en hemserver med en PostgreSQL-databas. Databasen är inte öppen mot internet. Den kan endast nås via en SSH-tunnel.",
     "id": 0
   },
   "detail": {
@@ -11,9 +11,9 @@
     "diagrams": [
       {
         "id": 0,
-        "title": "New STRIDE diagram",
+        "title": "STRIDE diagram",
         "diagramType": "STRIDE",
-        "placeholder": "New STRIDE diagram description",
+        "placeholder": "STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "version": "2.6.2",
         "cells": [
@@ -450,7 +450,7 @@
                   "status": "Mitigated",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "Angripare får direkt åtkomst till data via port 5432",
+                  "description": "Angripare får direkt åtkomst till data via port 5432.",
                   "mitigation": "PostgreSQL är endast tillgänglig via localhost och SSH-tunnel.",
                   "modelType": "STRIDE",
                   "new": false,
@@ -486,8 +486,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Krypterad SSH tunnel",
-              "description": "This connection is only allowed when sinde the Trust Boundary",
+              "name": "Krypterad SSH-tunnel",
+              "description": "Denna anslutning är endast tillåten inom säkerhetsgränsen.",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -596,7 +596,7 @@
             "vertices": []
           }
         ],
-        "description": "Threat model of a home server running a PostgreSQL database accessible only through an SSH tunnel."
+        "description": "Hotmodell för en hemserver som kör en PostgreSQL-databas och som endast är åtkomlig via en SSH-tunnel."
       }
     ],
     "diagramTop": 1,

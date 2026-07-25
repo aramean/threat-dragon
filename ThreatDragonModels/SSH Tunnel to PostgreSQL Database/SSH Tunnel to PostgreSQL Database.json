@@ -57,7 +57,7 @@
             },
             "attrs": {
               "text": {
-                "text": "User"
+                "text": "Användare"
               },
               "body": {
                 "stroke": "#333333",
@@ -153,7 +153,7 @@
             "id": "e739b683-4e69-4de0-986f-2223e41a0976",
             "data": {
               "type": "tm.Actor",
-              "name": "User",
+              "name": "Användare",
               "description": "",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -283,25 +283,51 @@
               "threats": [
                 {
                   "id": "cd5d9752-b595-4f03-b7f4-5c8d44b8c970",
-                  "title": "New STRIDE threat",
+                  "title": "Password Brute-Force",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Spoofing",
-                  "description": "Attacker tries to log in to SSH",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "An attacker guesses the SSH password to log in as a legitimate user.",
+                  "mitigation": "Fail2ban blocks failed attempts, and a strong password limits guessing.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 1,
                   "score": ""
+                },
+                {
+                  "id": "cb67befa-d077-455a-ba18-a7df13a7ef5b",
+                  "title": "Flooding",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "An attacker floods port 22 with traffic to prevent user logins",
+                  "mitigation": "Firewall rate limits restrict incoming connection attempts",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "994d2610-3ae8-4a4b-b285-9f04c7ccc0f3",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
-                "tampering": 0,
+                "spoofing": 4,
+                "tampering": 1,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 0,
-                "elevationOfPrivilege": 0
+                "denialOfService": 4,
+                "elevationOfPrivilege": 7
               }
             }
           },
@@ -316,7 +342,7 @@
             },
             "attrs": {
               "text": {
-                "text": "PostgreSQL\nDatabase"
+                "text": "PostgreSQL\nDatabas"
               },
               "topLine": {
                 "strokeWidth": 1.5,
@@ -415,7 +441,7 @@
             "id": "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
             "data": {
               "type": "tm.Store",
-              "name": "PostgreSQL\nDatabase",
+              "name": "PostgreSQL\nDatabas",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -426,57 +452,28 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
+              "threats": [
+                {
+                  "id": "49aa5f10-bb3d-45b3-94ca-46e185a18248",
+                  "title": "Direct Port Exposure",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "An external attacker views data directly through port 5432",
+                  "mitigation": "PostgreSQL listens on localhost, completely blocking external connections and forcing all access through the encrypted SSH tunnel",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 3,
+                "denialOfService": 0
               }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "SSH Login (password)",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": [
-                "17056723-829c-4ff8-9dd6-96d4f39d263a"
-              ]
-            },
-            "labels": [
-              "SSH Login (password)"
-            ],
-            "id": "0df17f00-76fa-4b5c-96df-a70a5ec13f9b",
-            "source": {
-              "cell": "e739b683-4e69-4de0-986f-2223e41a0976",
-              "port": "be48a8d3-6327-4231-9895-7bf36c8947a6"
-            },
-            "target": {
-              "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
-              "port": "c76aee75-b927-4326-8205-75b9c2213101"
-            },
-            "vertices": []
+            }
           },
           {
             "shape": "flow",
@@ -526,17 +523,66 @@
             "vertices": []
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "SSH Login (lösenord)",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "17056723-829c-4ff8-9dd6-96d4f39d263a"
+              ]
+            },
+            "labels": [
+              "SSH Login (lösenord)"
+            ],
+            "id": "0df17f00-76fa-4b5c-96df-a70a5ec13f9b",
+            "source": {
+              "cell": "e739b683-4e69-4de0-986f-2223e41a0976",
+              "port": "be48a8d3-6327-4231-9895-7bf36c8947a6"
+            },
+            "target": {
+              "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
+              "port": "c76aee75-b927-4326-8205-75b9c2213101"
+            },
+            "vertices": []
+          },
+          {
             "position": {
               "x": 319.9999999999998,
               "y": 139.99999999999966
             },
             "size": {
-              "width": 210,
+              "width": 110,
               "height": 50
             },
             "attrs": {
               "text": {
-                "text": "Trust Boundary (Home Server) "
+                "text": "Förtroendegräns"
               }
             },
             "visible": true,
@@ -545,7 +591,7 @@
             "id": "d4bea1e4-5db4-421f-b721-78fb0c0cf6a1",
             "data": {
               "type": "tm.Text",
-              "name": "Trust Boundary (Home Server) ",
+              "name": "Förtroendegräns",
               "hasOpenThreats": false
             }
           }
@@ -555,6 +601,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Teacher",
-    "threatTop": 1
+    "threatTop": 4
   }
 }

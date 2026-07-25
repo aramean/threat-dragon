@@ -35,14 +35,50 @@
             "labels": [
               "Trust Boundary"
             ],
-            "id": "e1eb0bc9-b886-4429-966b-ca4e289fd584",
+            "id": "bbb28129-2d5c-41c2-ba7d-e1916936c1bf",
             "source": {
-              "x": 205,
-              "y": 40
+              "x": 223,
+              "y": 60
             },
             "target": {
-              "x": 305,
-              "y": 140
+              "x": 290,
+              "y": 340
+            },
+            "vertices": [
+              {
+                "x": 290,
+                "y": 130
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
             }
           },
           {

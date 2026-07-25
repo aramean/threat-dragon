@@ -19,12 +19,12 @@
         "cells": [
           {
             "position": {
-              "x": 289.9999999999999,
-              "y": 140.0000000000001
+              "x": 309.9999999999998,
+              "y": 139.99999999999966
             },
             "size": {
-              "width": 330,
-              "height": 280
+              "width": 580,
+              "height": 200
             },
             "visible": true,
             "shape": "trust-boundary-box",
@@ -41,17 +41,18 @@
               ],
               "containedElements": [
                 "78bdfa01-3517-4bd6-afe7-62447f24d053",
-                "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d"
+                "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
+                "d4bea1e4-5db4-421f-b721-78fb0c0cf6a1"
               ]
             }
           },
           {
             "position": {
-              "x": 140,
-              "y": 180
+              "x": 100,
+              "y": 210.00000000000063
             },
             "size": {
-              "width": 120,
+              "width": 130,
               "height": 60
             },
             "attrs": {
@@ -164,12 +165,12 @@
           },
           {
             "position": {
-              "x": 475,
-              "y": 180
+              "x": 465,
+              "y": 199.99999999999966
             },
             "size": {
               "width": 80,
-              "height": 60
+              "height": 80
             },
             "attrs": {
               "text": {
@@ -284,12 +285,12 @@
           },
           {
             "position": {
-              "x": 455,
-              "y": 330.00000000000006
+              "x": 730,
+              "y": 204.99999999999966
             },
             "size": {
-              "width": 120,
-              "height": 50
+              "width": 110,
+              "height": 70
             },
             "attrs": {
               "text": {
@@ -494,28 +495,18 @@
             "id": "c8457ece-0f8e-43cf-9771-4c8fad2556ee",
             "source": {
               "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
-              "port": "771a7fa3-e88e-403c-b7b6-972389d0de94"
+              "port": "df9e6549-fe76-44bf-9c98-9a870147878d"
             },
             "target": {
               "cell": "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
-              "port": "8a2fa284-e55e-4c1c-b314-84d5e810a65b"
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
+              "port": "26776bae-273a-4d45-8fca-0997156282ba"
             },
             "vertices": []
           },
           {
             "position": {
-              "x": 345,
-              "y": 100.00000000000011
+              "x": 319.9999999999998,
+              "y": 139.99999999999966
             },
             "size": {
               "width": 210,

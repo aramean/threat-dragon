@@ -165,7 +165,7 @@
           },
           {
             "position": {
-              "x": 465,
+              "x": 449.9999999999998,
               "y": 199.99999999999966
             },
             "size": {
@@ -449,7 +449,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Remote Connection",
+              "name": "SSH Login (password)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -465,7 +465,7 @@
               ]
             },
             "labels": [
-              "Remote Connection"
+              "SSH Login (password)"
             ],
             "id": "0df17f00-76fa-4b5c-96df-a70a5ec13f9b",
             "source": {
@@ -498,7 +498,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Local Connection",
+              "name": "Encrypted SSH Tunnel",
               "description": "This connection is only allowed when sinde the Trust Boundary",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -512,7 +512,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Local Connection"
+              "Encrypted SSH Tunnel"
             ],
             "id": "c8457ece-0f8e-43cf-9771-4c8fad2556ee",
             "source": {

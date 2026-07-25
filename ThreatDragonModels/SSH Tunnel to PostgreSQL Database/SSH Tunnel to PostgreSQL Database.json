@@ -28,8 +28,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "17056723-829c-4ff8-9dd6-96d4f39d263a",
             "zIndex": -1,
+            "id": "17056723-829c-4ff8-9dd6-96d4f39d263a",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Trust Boundary",
@@ -415,7 +415,7 @@
                   "name": "block"
                 },
                 "sourceMarker": {
-                  "name": "block"
+                  "name": ""
                 },
                 "strokeDasharray": null
               }
@@ -432,7 +432,7 @@
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
-              "isBidirectional": true,
+              "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
@@ -453,7 +453,17 @@
               "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
               "port": "c76aee75-b927-4326-8205-75b9c2213101"
             },
-            "vertices": []
+            "vertices": [],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "shape": "flow",
@@ -518,8 +528,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "d4bea1e4-5db4-421f-b721-78fb0c0cf6a1",
             "zIndex": 11,
+            "id": "d4bea1e4-5db4-421f-b721-78fb0c0cf6a1",
             "data": {
               "type": "tm.Text",
               "name": "Trust Boundary (Home Server) ",

@@ -18,43 +18,38 @@
         "version": "2.6.2",
         "cells": [
           {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
+            "position": {
+              "x": 289.9999999999999,
+              "y": 90.00000000000011
+            },
+            "size": {
+              "width": 330,
+              "height": 330
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "17056723-829c-4ff8-9dd6-96d4f39d263a",
             "zIndex": -1,
-            "connector": "smooth",
             "data": {
-              "type": "tm.Boundary",
+              "type": "tm.BoundaryBox",
               "name": "Trust Boundary",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
-              "crossingFlows": [],
-              "containedElements": []
-            },
-            "labels": [
-              "Trust Boundary"
-            ],
-            "id": "bbb28129-2d5c-41c2-ba7d-e1916936c1bf",
-            "source": {
-              "x": 223,
-              "y": 60
-            },
-            "target": {
-              "x": 290,
-              "y": 340
-            },
-            "vertices": [
-              {
-                "x": 290,
-                "y": 130
-              }
-            ]
+              "crossingFlows": [
+                "0df17f00-76fa-4b5c-96df-a70a5ec13f9b"
+              ],
+              "containedElements": [
+                "78bdfa01-3517-4bd6-afe7-62447f24d053",
+                "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
+                "d4bea1e4-5db4-421f-b721-78fb0c0cf6a1"
+              ]
+            }
           },
           {
             "position": {
-              "x": 70,
-              "y": 120
+              "x": 140,
+              "y": 180
             },
             "size": {
               "width": 120,
@@ -170,12 +165,12 @@
           },
           {
             "position": {
-              "x": 410,
-              "y": 100
+              "x": 475,
+              "y": 165
             },
             "size": {
-              "width": 100,
-              "height": 100
+              "width": 80,
+              "height": 90
             },
             "attrs": {
               "text": {
@@ -290,12 +285,12 @@
           },
           {
             "position": {
-              "x": 610,
-              "y": 120
+              "x": 455,
+              "y": 330.00000000000006
             },
             "size": {
               "width": 120,
-              "height": 60
+              "height": 50
             },
             "attrs": {
               "text": {
@@ -432,7 +427,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Remote Connection",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -443,10 +438,12 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "17056723-829c-4ff8-9dd6-96d4f39d263a"
+              ]
             },
             "labels": [
-              "Data Flow"
+              "Remote Connection"
             ],
             "id": "0df17f00-76fa-4b5c-96df-a70a5ec13f9b",
             "source": {
@@ -457,12 +454,78 @@
               "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
               "port": "c76aee75-b927-4326-8205-75b9c2213101"
             },
-            "vertices": [
-              {
-                "x": 330,
-                "y": 155
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
               }
-            ]
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Local Connection",
+              "description": "This connection is only allowed when sinde the Trust Boundary",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Local Connection"
+            ],
+            "id": "c8457ece-0f8e-43cf-9771-4c8fad2556ee",
+            "source": {
+              "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
+              "port": "771a7fa3-e88e-403c-b7b6-972389d0de94"
+            },
+            "target": {
+              "cell": "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
+              "port": "8a2fa284-e55e-4c1c-b314-84d5e810a65b"
+            },
+            "vertices": []
+          },
+          {
+            "position": {
+              "x": 300,
+              "y": 100
+            },
+            "size": {
+              "width": 210,
+              "height": 50
+            },
+            "attrs": {
+              "text": {
+                "text": "Trust Boundary (Home Server) "
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "id": "d4bea1e4-5db4-421f-b721-78fb0c0cf6a1",
+            "zIndex": 11,
+            "data": {
+              "type": "tm.Text",
+              "name": "Trust Boundary (Home Server) ",
+              "hasOpenThreats": false
+            }
           }
         ],
         "description": "Threat model of a home server running a PostgreSQL database accessible only through an SSH tunnel."

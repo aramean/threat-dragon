@@ -495,8 +495,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Encrypted SSH Tunnel",
-              "description": "This connection is only allowed when sinde the Trust Boundary",
+              "name": "SSH login (lösenord)",
+              "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -506,19 +506,21 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "17056723-829c-4ff8-9dd6-96d4f39d263a"
+              ]
             },
             "labels": [
-              "Encrypted SSH Tunnel"
+              "SSH login (lösenord)"
             ],
-            "id": "c8457ece-0f8e-43cf-9771-4c8fad2556ee",
+            "id": "0df17f00-76fa-4b5c-96df-a70a5ec13f9b",
             "source": {
-              "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
-              "port": "df9e6549-fe76-44bf-9c98-9a870147878d"
+              "cell": "e739b683-4e69-4de0-986f-2223e41a0976",
+              "port": "be48a8d3-6327-4231-9895-7bf36c8947a6"
             },
             "target": {
-              "cell": "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
-              "port": "26776bae-273a-4d45-8fca-0997156282ba"
+              "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
+              "port": "c76aee75-b927-4326-8205-75b9c2213101"
             },
             "vertices": []
           },
@@ -542,8 +544,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "SSH Login (lösenord)",
-              "description": "",
+              "name": "Krypterad SSH tunnel",
+              "description": "This connection is only allowed when sinde the Trust Boundary",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -553,21 +555,19 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": [
-                "17056723-829c-4ff8-9dd6-96d4f39d263a"
-              ]
+              "trustBoundaryIds": []
             },
             "labels": [
-              "SSH Login (lösenord)"
+              "Krypterad SSH tunnel"
             ],
-            "id": "0df17f00-76fa-4b5c-96df-a70a5ec13f9b",
+            "id": "c8457ece-0f8e-43cf-9771-4c8fad2556ee",
             "source": {
-              "cell": "e739b683-4e69-4de0-986f-2223e41a0976",
-              "port": "be48a8d3-6327-4231-9895-7bf36c8947a6"
+              "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
+              "port": "df9e6549-fe76-44bf-9c98-9a870147878d"
             },
             "target": {
-              "cell": "78bdfa01-3517-4bd6-afe7-62447f24d053",
-              "port": "c76aee75-b927-4326-8205-75b9c2213101"
+              "cell": "6a28bf43-a85e-4b2d-9a25-4ba0b1dcb22d",
+              "port": "26776bae-273a-4d45-8fca-0997156282ba"
             },
             "vertices": []
           },
